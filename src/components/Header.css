@@ -1,0 +1,68 @@
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: #1f2937;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav-desktop {
+  display: none;
+}
+
+.nav-link {
+  margin: 0 12px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #60a5fa;
+}
+
+.nav-mobile {
+  display: block;
+}
+
+.menu-button {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-button:focus {
+  outline: none;
+}
+
+.menu-icon {
+  height: 24px;
+  width: 24px;
+  fill: currentColor;
+}
+
+@media (min-width: 768px) {
+  .nav-desktop {
+    display: flex;
+    gap: 24px;
+  }
+
+  .nav-mobile {
+    display: none;
+  }
+}
