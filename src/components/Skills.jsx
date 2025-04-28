@@ -1,27 +1,29 @@
 import React from 'react';
 import './Skills.css';
+import { FaReact, FaJava, FaGitAlt, FaDocker } from 'react-icons/fa';
+import { SiFlutter, SiSpringboot, SiFirebase, SiPostgresql, SiGooglecloud } from 'react-icons/si';
+import { BsGearFill } from 'react-icons/bs';
 
 const Skills = () => {
-  // Define different skill categories
+  // Define different skill categories with icons
   const programmingSkills = [
-    { name: "Flutter" },
-    { name: "Java" },
-    { name: "React.js" }
+    { name: "Flutter", icon: <SiFlutter className="skill-icon" /> },
+    { name: "Java", icon: <FaJava className="skill-icon" /> },
+    { name: "React.js", icon: <FaReact className="skill-icon" /> }
   ];
   
   const backendSkills = [
-    { name: "Spring Boot" },
-    { name: "Firebase" },
-    { name: "PostgreSQL" }
+    { name: "Spring Boot", icon: <SiSpringboot className="skill-icon" /> },
+    { name: "Firebase", icon: <SiFirebase className="skill-icon" /> },
+    { name: "PostgreSQL", icon: <SiPostgresql className="skill-icon" /> }
   ];
   
   const toolsSkills = [
-    { name: "Git" },
-    { name: "GCP" },
-    { name: "CI/CD" }
+    { name: "Git", icon: <FaGitAlt className="skill-icon" /> },
+    { name: "GCP", icon: <SiGooglecloud className="skill-icon" /> },
+    { name: "CI/CD", icon: <BsGearFill className="skill-icon" /> },
+    { name: "Docker", icon: <FaDocker className="skill-icon" /> }
   ];
-
-
 
   return (
     <section id="skills" className="skills-section">
@@ -35,6 +37,7 @@ const Skills = () => {
             <div className="skills-list">
               {programmingSkills.map((skill, index) => (
                 <div key={index} className="skill-card frontend">
+                  {skill.icon}
                   <div className="skill-name">{skill.name}</div>
                 </div>
               ))}
@@ -46,6 +49,7 @@ const Skills = () => {
             <div className="skills-list">
               {backendSkills.map((skill, index) => (
                 <div key={index} className="skill-card backend">
+                  {skill.icon}
                   <div className="skill-name">{skill.name}</div>
                 </div>
               ))}
@@ -57,6 +61,7 @@ const Skills = () => {
             <div className="skills-list">
               {toolsSkills.map((skill, index) => (
                 <div key={index} className="skill-card tools">
+                  {skill.icon}
                   <div className="skill-name">{skill.name}</div>
                 </div>
               ))}
