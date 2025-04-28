@@ -1,5 +1,5 @@
 .footer {
-  background-color: #1f2937;
+  background-color: #0f172a; /* Dark background for neon effect */
   color: white;
   padding: 64px 0 24px;
 }
@@ -25,10 +25,12 @@
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 16px;
+  color: #fff;
+  text-shadow: 0 0 5px #0ff; /* Cyan glow */
 }
 
 .footer-description {
-  color: #9ca3af;
+  color: #d1d5db;
   line-height: 1.6;
 }
 
@@ -42,13 +44,14 @@
 }
 
 .footer-links a {
-  color: #9ca3af;
+  color: #d1d5db;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: white;
+  color: #0ff; /* Cyan */
+  text-shadow: 0 0 5px #0ff; /* Cyan glow */
 }
 
 .social-links {
@@ -57,20 +60,21 @@
 }
 
 .social-link {
-  color: #9ca3af;
+  color: #d1d5db;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .social-link:hover {
-  color: white;
+  color: #f0f; /* Magenta */
+  text-shadow: 0 0 5px #f0f; /* Magenta glow */
 }
 
 .footer-bottom {
   padding-top: 24px;
   border-top: 1px solid #374151;
   text-align: center;
-  color: #9ca3af;
+  color: #d1d5db;
 }
 
 @media (min-width: 768px) {
@@ -81,5 +85,21 @@
 
   .footer-section {
     margin-bottom: 0;
+  }
+}
+
+/* Media queries for responsiveness and reduced neon effects */
+@media (max-width: 767px) {
+  .footer-title {
+    text-shadow: 0 0 2px #0ff; /* Minimal glow on mobile */
+    font-size: 18px;
+  }
+  
+  .footer-links a:hover {
+    text-shadow: 0 0 2px #0ff; /* Minimal glow on mobile */
+  }
+  
+  .social-link:hover {
+    text-shadow: 0 0 2px #f0f; /* Minimal glow on mobile */
   }
 }

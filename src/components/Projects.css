@@ -1,6 +1,7 @@
 .projects-section {
   padding: 80px 0;
-  background-color: #f9f9f9;
+  background-color: #0f172a; /* Dark background for neon effect */
+  color: #fff;
 }
 
 .container {
@@ -13,8 +14,23 @@
   font-size: 36px;
   font-weight: 700;
   text-align: center;
-  color: #333;
+  color: #fff;
   margin-bottom: 48px;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; /* Cyan neon glow */
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #0ff; /* Cyan neon */
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff; /* Neon glow effect */
 }
 
 .projects-grid {
@@ -24,15 +40,18 @@
 }
 
 .project-card {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.05);
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
 }
 
 .project-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 255, 255, 0.3);
 }
 
 .project-image {
@@ -53,12 +72,13 @@
 .project-title {
   font-size: 24px;
   font-weight: 600;
-  color: #333;
+  color: #fff;
   margin-bottom: 12px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .project-description {
-  color: #666;
+  color: #d1d5db;
   margin-bottom: 16px;
   line-height: 1.6;
 }
@@ -71,11 +91,13 @@
 }
 
 .tech-tag {
-  background-color: #e5e7eb;
-  color: #4b5563;
+  background-color: rgba(0, 255, 255, 0.1);
+  color: #0ff;
   padding: 4px 12px;
   border-radius: 16px;
   font-size: 14px;
+  border: 1px solid rgba(0, 255, 255, 0.3);
+  text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
 }
 
 .project-links {
@@ -88,25 +110,33 @@
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .project-link.live {
-  background-color: #3b82f6;
-  color: white;
+  background-color: transparent;
+  color: #f0f; /* Magenta */
+  border: 1px solid #f0f;
+  text-shadow: 0 0 5px #f0f;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
 }
 
 .project-link.live:hover {
-  background-color: #2563eb;
+  background-color: rgba(255, 0, 255, 0.1);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
 }
 
 .project-link.github {
-  background-color: #3b82f6;
-  color: #4b5563;
+  background-color: transparent;
+  color: #0ff; /* Cyan */
+  border: 1px solid #0ff;
+  text-shadow: 0 0 5px #0ff;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
 }
 
 .project-link.github:hover {
-  background-color: #2563eb;
+  background-color: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
 @media (min-width: 768px) {
@@ -118,5 +148,42 @@
 @media (min-width: 1024px) {
   .projects-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Media queries for responsiveness and reduced neon effects */
+@media (max-width: 767px) {
+  .section-title {
+    text-shadow: 0 0 3px #0ff, 0 0 6px #0ff; /* Further reduced glow on mobile */
+    font-size: 28px;
+  }
+  
+  .section-title:after {
+    box-shadow: 0 0 3px #0ff, 0 0 6px #0ff; /* Reduced glow on mobile */
+  }
+  
+  .project-card {
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.1);
+  }
+  
+  .project-card:hover {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+  
+  .project-title {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+  }
+  
+  .tech-tag {
+    text-shadow: 0 0 2px rgba(0, 255, 255, 0.3);
+  }
+  
+  .project-link {
+    text-shadow: 0 0 2px currentColor;
+    box-shadow: 0 0 5px rgba(0, 255, 255, 0.2);
+  }
+  
+  .project-link:hover {
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
   }
 }

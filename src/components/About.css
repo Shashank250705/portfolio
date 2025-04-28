@@ -1,6 +1,7 @@
 .about-section {
   padding: 80px 0;
-  background-color: white;
+  background-color: #0f172a; /* Dark background for neon effect */
+  color: #fff;
 }
 
 .container {
@@ -13,12 +14,13 @@
   font-size: 36px;
   font-weight: 700;
   text-align: center;
-  color: #333;
-  margin-bottom: 150px;  /* Adjusted from 250px */
+  color: #fff;
+  margin-bottom: 150px;
   padding: 40px 0 40px;
   position: relative;
   margin-top: 40px;
   letter-spacing: 1px;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; /* Cyan neon glow */
 }
 
 /* Added decorative underline */
@@ -30,7 +32,8 @@
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background-color: #3b82f6;
+  background-color: #0ff; /* Cyan neon */
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff; /* Neon glow effect */
 }
 
 .about-content {
@@ -47,13 +50,14 @@
 .subsection-title {
   font-size: 24px;
   font-weight: 600;
-  color: #333;
+  color: #fff;
   margin-bottom: 40px;  /* Increased for more space */
   margin-top: 20px;
+  text-shadow: 0 0 5px #f0f; /* Magenta glow */
 }
 
 .text-paragraph {
-  color: #666;
+  color: #d1d5db;
   margin-bottom: 24px;
   line-height: 1.6;
 }
@@ -146,27 +150,21 @@
   }
 }
 
-/* Existing media query with enhancements */
-@media (min-width: 768px) {
-  .about-content {
-    flex-direction: row;
-    align-items: flex-start;
+/* Media queries for responsiveness and reduced neon effects */
+@media (max-width: 767px) {
+  .section-title {
+    text-shadow: 0 0 3px #0ff, 0 0 6px #0ff; /* Further reduced glow on mobile */
+    font-size: 28px;
+    margin-bottom: 80px;
   }
   
-  .about-text {
-    width: 50%;
-    margin-bottom: 0;
-    padding-right: 40px;
+  .section-title:after {
+    box-shadow: 0 0 3px #0ff, 0 0 6px #0ff; /* Reduced glow on mobile */
   }
   
-  .skills-section {
-    width: 50%;
-    padding-left: 40px;
-    margin-top: 20px;
-  }
-  
-  .skills-grid {
-    grid-template-columns: 1fr 1fr;
+  .subsection-title {
+    text-shadow: 0 0 2px #f0f; /* Minimal glow on mobile */
+    font-size: 20px;
   }
 }
 

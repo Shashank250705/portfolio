@@ -1,5 +1,6 @@
 import React from 'react';
 import './Certifications.css';
+import ScrollAnimation from './ScrollAnimation';
 
 const Certifications = () => {
   // Sample certification data - replace with your own
@@ -56,13 +57,14 @@ const Certifications = () => {
 
   return (
     <section id="certifications" className="certifications-section">
+      <ScrollAnimation />
       <div className="container">
-        <h2 className="section-title">
+        <h2 className="section-title section-title-animation">
           Certifications
         </h2>
         <div className="certifications-grid">
-          {certifications.map(cert => (
-            <div key={cert.id} className="certification-card">
+          {certifications.map((cert, index) => (
+            <div key={index} className="certification-card fade-in-up">
               {/*<div className="certification-image-container">
                 <img 
                   src={cert.image} 
@@ -78,7 +80,7 @@ const Certifications = () => {
                   <span className="certification-date">{cert.date}</span>
                 </div>
                 <p className="certification-description">{cert.description}</p>
-                <button className="view-certificate-button">
+                <button className="view-certificate-button" onClick={() => window.open(cert.link, '_blank')}>
                   View Certificate
                 </button>
               </div>

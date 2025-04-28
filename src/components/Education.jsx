@@ -1,5 +1,6 @@
 import React from 'react';
 import './Education.css';
+import ScrollAnimation from './ScrollAnimation';  // Add this import
 
 const Education = () => {
   const educationData = [
@@ -21,13 +22,14 @@ const Education = () => {
 
   return (
     <section id="education" className="education-section">
+      <ScrollAnimation />
       <div className="container">
-        <h2 className="section-title">
+        <h2 className="section-title section-title-animation">
           Education
         </h2>
         <div className="education-grid">
-          {educationData.map(edu => (
-            <div key={edu.id} className="education-card">
+          {educationData.map((edu, index) => (
+            <div key={edu.id} className="education-card fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
               <h3 className="degree-title">{edu.degree}</h3>
               <div className="education-meta">
                 <span className="institution">{edu.institution}</span>

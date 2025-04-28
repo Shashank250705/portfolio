@@ -1,5 +1,6 @@
 import React from 'react';
 import './Experience.css';
+import ScrollAnimation from './ScrollAnimation';
 
 const Experience = () => {
   // Sample experience data - replace with your own
@@ -29,8 +30,9 @@ const Experience = () => {
 
   return (
     <section id="experience" className="experience-section">
+      <ScrollAnimation />
       <div className="container">
-        <h2 className="section-title">
+        <h2 className="section-title section-title-animation">
           Professional Experience
         </h2>
         <div className="timeline-container">
@@ -40,7 +42,7 @@ const Experience = () => {
           {/* Experience items */}
           {experiences.map((exp, index) => (
             <div key={exp.id} className="experience-item">
-              <div className={`experience-content ${index % 2 === 0 ? 'right-aligned' : 'left-aligned'}`}>
+              <div className={`experience-content ${index % 2 === 0 ? 'right-aligned fade-in-up' : 'left-aligned fade-in-up'}`} style={{animationDelay: `${index * 0.2}s`}}>
                 {/* Timeline dot */}
                 <div className="timeline-dot"></div>
                 

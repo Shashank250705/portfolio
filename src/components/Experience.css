@@ -1,6 +1,7 @@
 .experience-section {
   padding: 80px 0;
-  background-color: #f9f9f9;
+  background-color: #0f172a; /* Dark background for neon effect */
+  color: #fff;
 }
 
 .container {
@@ -13,8 +14,23 @@
   font-size: 36px;
   font-weight: 700;
   text-align: center;
-  color: #333;
+  color: #fff;
   margin-bottom: 48px;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff; /* Cyan neon glow */
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: #0ff; /* Cyan neon */
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff; /* Neon glow effect */
 }
 
 .timeline-container {
@@ -41,17 +57,26 @@
 }
 
 .experience-card {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.05);
   padding: 24px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
 .experience-role {
   font-size: 20px;
   font-weight: 700;
-  color: #333;
+  color: #fff;
   margin-bottom: 8px;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .experience-details {
@@ -61,21 +86,22 @@
 }
 
 .company-name {
-  color: #3b82f6;
+  color: #0ff; /* Cyan */
   font-weight: 500;
+  text-shadow: 0 0 5px #0ff;
 }
 
 .duration-separator {
   margin: 0 8px;
-  color: #666;
+  color: #d1d5db;
 }
 
 .experience-duration {
-  color: #666;
+  color: #d1d5db;
 }
 
 .experience-description {
-  color: #666;
+  color: #d1d5db;
   line-height: 1.6;
 }
 
@@ -88,7 +114,8 @@
     transform: translateX(-50%);
     width: 2px;
     height: 100%;
-    background-color: #e5e5e5;
+    background-color: rgba(0, 255, 255, 0.3);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
   }
   
   .timeline-dot {
@@ -99,8 +126,9 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background-color: #3b82f6;
+    background-color: #0ff; /* Cyan */
     z-index: 10;
+    box-shadow: 0 0 10px #0ff, 0 0 20px #0ff; /* Neon glow */
   }
   
   .experience-content {
@@ -126,5 +154,33 @@
   
   .left-aligned .experience-card {
     margin-left: 30px;
+  }
+}
+
+/* Media queries for responsiveness and reduced neon effects */
+@media (max-width: 767px) {
+  .section-title {
+    text-shadow: 0 0 3px #0ff, 0 0 6px #0ff; /* Further reduced glow on mobile */
+    font-size: 28px;
+  }
+  
+  .section-title:after {
+    box-shadow: 0 0 3px #0ff, 0 0 6px #0ff; /* Reduced glow on mobile */
+  }
+  
+  .experience-card {
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.1);
+  }
+  
+  .experience-card:hover {
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+  
+  .experience-role {
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.3);
+  }
+  
+  .company-name {
+    text-shadow: 0 0 2px #0ff;
   }
 }

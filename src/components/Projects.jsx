@@ -1,5 +1,6 @@
 import React from 'react';
 import './Projects.css';
+import ScrollAnimation from './ScrollAnimation';
 
 const Projects = () => {
   const projects = [
@@ -31,11 +32,12 @@ const Projects = () => {
 
   return (
     <section id="projects" className="projects-section">
+      <ScrollAnimation />
       <div className="container">
-        <h2 className="section-title">Projects</h2>
+        <h2 className="section-title section-title-animation">Projects</h2>
         <div className="projects-grid">
-          {projects.map(project => (
-            <div key={project.id} className="project-card">
+          {projects.map((project, index) => (
+            <div key={project.id} className="project-card fade-in-up" style={{animationDelay: `${index * 0.2}s`}}>
               {/* Container for project image */}
               {/*<div className="project-image">
                 <img src={project.image} alt={project.title} />
@@ -49,7 +51,6 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="project-links">
-                  
                   <a href={project.githubLink} className="project-link github">GitHub</a>
                 </div>
               </div>

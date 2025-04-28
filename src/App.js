@@ -9,10 +9,12 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import './App.css';
+import './components/animations.css'; // Import animations
 
 function App() {
   return (
-    <div className="app">
+    <div className="app reduced-glow">
       <Header />
       <main>
         <Hero />
@@ -22,9 +24,7 @@ function App() {
         <Education />
         <Projects />
         <Certifications />
-        <Contact />
-       
-        
+        <Contact />     
       </main>
       <Footer />
     </div>

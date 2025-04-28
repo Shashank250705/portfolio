@@ -3,7 +3,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #f3f4f6;
+  background-color: #0f172a; /* Dark background for neon effect */
+  color: #fff;
 }
 
 .container {
@@ -29,22 +30,25 @@
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
-  color: #111827;
+  color: #fff;
   margin-bottom: 16px;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; /* Reduced cyan neon glow */
 }
 
 .highlight {
-  color: #2563eb;
+  color: #0ff; /* Cyan */
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; /* Reduced glow */
 }
 
 .hero-subtitle {
   font-size: 24px;
-  color: #4b5563;
+  color: #d1d5db;
   margin-bottom: 32px;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.3); /* Reduced glow */
 }
 
 .hero-description {
-  color: #6b7280;
+  color: #d1d5db;
   margin-bottom: 32px;
   text-align: center;
 }
@@ -55,34 +59,38 @@
 }
 
 .btn-primary {
-  background-color: #2563eb;
-  color: white;
+  background-color: transparent;
+  color: #0ff; /* Cyan */
   padding: 12px 24px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
   margin-right: 16px;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
-  border: none;
+  border: 1px solid #0ff;
+  text-shadow: 0 0 5px #0ff;
 }
 
 .btn-primary:hover {
-  background-color: #1d4ed8;
+  background-color: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
 .btn-secondary {
-  background-color: #e5e7eb;
-  color: #1f2937;
+  background-color: transparent;
+  color: #f0f; /* Magenta */
   padding: 12px 24px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.3);
+  transition: all 0.3s ease;
   cursor: pointer;
-  border: none;
+  border: 1px solid #f0f;
+  text-shadow: 0 0 5px #f0f;
 }
 
 .btn-secondary:hover {
-  background-color: #d1d5db;
+  background-color: rgba(255, 0, 255, 0.1);
+  box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
 }
 
 .hero-image-container {
@@ -95,8 +103,8 @@
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto;
-  border: 4px solid #2563eb;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border: 4px solid #0ff; /* Cyan */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
 .profile-image {

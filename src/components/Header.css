@@ -1,10 +1,12 @@
 .header {
   position: fixed;
   width: 100%;
-  background-color: #1f2937;
+  background-color: rgba(15, 23, 42, 0.9); /* Dark background with transparency */
   color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
   z-index: 50;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 255, 255, 0.1);
 }
 
 .container {
@@ -19,6 +21,8 @@
 .logo {
   font-size: 20px;
   font-weight: 700;
+  color: #0ff; /* Cyan */
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff; /* Neon glow */
 }
 
 .nav-desktop {
@@ -28,11 +32,13 @@
 .nav-link {
   margin: 0 12px;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  color: #d1d5db;
 }
 
 .nav-link:hover {
-  color: #60a5fa;
+  color: #0ff; /* Cyan */
+  text-shadow: 0 0 5px #0ff; /* Neon glow */
 }
 
 .nav-mobile {
@@ -40,10 +46,11 @@
 }
 
 .menu-button {
-  color: white;
+  color: #0ff; /* Cyan */
   background: none;
   border: none;
   cursor: pointer;
+  text-shadow: 0 0 5px #0ff; /* Neon glow */
 }
 
 .menu-button:focus {
@@ -64,5 +71,25 @@
 
   .nav-mobile {
     display: none;
+  }
+}
+
+/* Media queries for responsiveness and reduced neon effects */
+@media (max-width: 767px) {
+  .header {
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
+  }
+  
+  .logo {
+    text-shadow: 0 0 3px #0ff, 0 0 6px #0ff; /* Reduced glow on mobile */
+    font-size: 18px;
+  }
+  
+  .menu-button {
+    text-shadow: 0 0 2px #0ff; /* Minimal glow on mobile */
+  }
+  
+  .nav-link:hover {
+    text-shadow: 0 0 2px #0ff; /* Minimal glow on mobile */
   }
 }
